@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDos</title>
+</head>
+<body>
+    <h4>待做事项</h4>
+    <form action="/todo" method="POST">
+        <textarea name="todo" id="" cols="30" rows="10" placeholder="一些需要完成的事情"></textarea>
+        <button type="submit">添加</button>
+    </form>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo }}</li><br>
+        {% endfor %}
+    </ul>
+</body>
+</html>

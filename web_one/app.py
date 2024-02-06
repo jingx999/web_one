@@ -1,7 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
 import json
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@172.17.0.2:3306/web'
 
 @app.route('/temperature')
 def temperature():
@@ -21,6 +23,14 @@ def population():
     with open('population_data.json', 'rt') as f2:
         data = json.loads(f2.read())
         return render_template('population_data.html', contents=data)
+
+@app.route('/todo', methods=['GET', 'POST'])
+def todo():
+    todos = []
+    if request.method == 'POST':
+        todo = request.form.get('todo')
+        todos.append(todo)
+    return render_template("todo.html", todos=todos)
 
 @app.route('/')
 def index():
