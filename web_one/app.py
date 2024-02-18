@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import json
+import time
+import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@172.17.0.2:3306/web'
@@ -27,9 +29,17 @@ def population():
 @app.route('/todo', methods=['GET', 'POST'])
 def todo():
     todos = []
+    with open('mission_list.txt', 'rt') as f3:
+        data_json = f3.read()
+        data_split = data_json.split('\n')
+        todos += data_split
     if request.method == 'POST':
         todo = request.form.get('todo')
-        todos.append(todo)
+        if todo:
+            current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            todos.append(f"{todo} -- {current_time}")
+            with open('mission_list.txt', 'wt') as f4:
+                f4.write('\n'.join(todos))
     return render_template("todo.html", todos=todos)
 
 @app.route('/')
