@@ -1,0 +1,40 @@
+body {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.logon-container {
+    display: flex;
+    background-color: orange;
+    border-radius: 5px;
+    width: 30%;
+    height: 40%;
+
+}
+
+.logon-container input {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    font-size: large;
+}
+
+.logon-container label {
+    margin: 10px;
+    font-size: large;
+}
+
+.logon-container h3 {
+    margin: 10px;
+}
+
+.logon-container button {
+    font-size: large;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+}

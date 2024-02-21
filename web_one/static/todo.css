@@ -18,18 +18,26 @@ body {
 .input-container {
     width: 50%;
     height: 100%;
-    background-color: red;
+    background-color: gray;
     padding: 10px;
 }
 
+.input-container h4 {
+    color: greenyellow;
+    margin: 20px;
+    width: 20%;
+}
+
 .input-container textarea {
-    width: 100%;
+    margin: 20px;
+    width: 90%;
     height: 200%;
     border: none;
     border-radius: 4px;
 }
 
 .input-container button {
+    margin: 20px;
     padding: 10px 20px;
     background-color: lightblue;
     border: none;
@@ -37,10 +45,27 @@ body {
     font-size: 12px;
 }
 
+.input-container input {
+    background-color: whitesmoke;
+    margin: 20px;
+    border-color: black;
+    border-radius: 4px;
+    width: 40%;
+    padding: 10px;
+    height: 15px;
+
+}
+
 .output-container {
     width: 50%;
     height: 100%;
-    background-color: blue;
+    background-color: blanchedalmond;
     padding: 10px;
     overflow-y: auto;
+}
+
+.output-container h4 {
+    color: black;
+    margin: 20px;
+    width: 20%;
 }

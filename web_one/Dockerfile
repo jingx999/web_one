@@ -1,17 +1,13 @@
-#使用python3.9作为基础镜像
+#设置基础镜像
 FROM python:3.9
 
 #设置工作目录
 WORKDIR /app
-
-#将项目文件复制到工作目录
+#复制项目文件到容器中
 COPY . /app
-
 #安装项目依赖
-RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
-
-#暴露flask应用的默认端口
+RUN pip install --no-cache-dir -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+#暴露应用程序端口
 EXPOSE 5000
-
-#启动flask应用
+#运行应用程序
 CMD ["python3", "app.py"]

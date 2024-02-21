@@ -11,9 +11,11 @@
         <div id="input-container" class="input-container">
             <h4>待做事项</h4>
             <form action="/todo" method="POST">
+                <input type="text" name="username">
                 <textarea name="todo" id="textarea" cols="30" rows="10" placeholder="一些需要完成的事情"></textarea><br>
                 <button type="submit" id="submit">添加</button>
             </form>
+            <a href="/">返回主页</a>
         </div>
         <div id="output-container" class="output-container">
             <h4>曾经做出的承诺</h4>

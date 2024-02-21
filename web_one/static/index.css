@@ -1,0 +1,21 @@
+body {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;*/
+}
+
+.main-page {
+    background-color: white;
+    width: 80%;
+}
+
+nav {
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
